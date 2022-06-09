@@ -46,7 +46,7 @@ const questions = [
         type: 'list',
         message: 'what type of license will you be using for this project?',
         choices: ['agpl-3.0', 'gpl-3.0', 'apache-2.0', 'no licence'],
-        name: 'licence'
+        name: 'license'
     },
     {
         type: 'input',
@@ -66,7 +66,9 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(`${fileName}.md`, `${data}`, err => err ? console.error(err) : console.log('Success') );
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -75,5 +77,4 @@ function init() {
 
 // Function call to initialize app
 init()
-.then(readMe => {console.log(readMe); return generateMarkdown(readMe)})
-.then(markdown => writeToFile(markdown));
+.then(readMe => {console.log(readMe); writeToFile(readMe.title, generateMarkdown(readMe))})
