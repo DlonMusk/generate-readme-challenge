@@ -11,7 +11,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Enter a brief description of your project',
+        message: 'Enter a short description explaining the what, why, and how of your project.',
         name: 'description'
     },
     {
@@ -26,8 +26,27 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Enter your programs test instructions',
-        name: 'test'
+        message: 'Enter the credits on this program',
+        name: 'credits'
+    },
+    {
+        type: 'list',
+        message: 'what type of license will you be using for this project?',
+        choices: ['agpl-3.0', 'gpl-3.0', 'apache-2.0', 'no licence'],
+        name: 'license'
+    },
+    {
+        type: 'confirm',
+        message: 'Does your program have extra features you would like to list?',
+        name: 'confirmFeatures',
+        default: true
+    },
+    {
+        type: 'input',
+        message: 'Enter your features divided by a space',
+        name: 'features',
+        when: ({confirmFeatures}) => {if(confirmFeatures){return true}else return false},
+        validate: featuresInput => {if(featuresInput){return true}else return false}
     },
     {
         type: 'confirm',
@@ -39,19 +58,18 @@ const questions = [
         type: 'input',
         message: 'Perfect! Please enter your contribution guidelines',
         name: 'contribute',
-        when: ({contributers}) => {if(contributers){return true}else false},
+        when: ({contributers}) => {if(contributers){return true}else return false},
         validate: contributersInput => {if(contributersInput){return true}else return false}
     },
     {
-        type: 'list',
-        message: 'what type of license will you be using for this project?',
-        choices: ['agpl-3.0', 'gpl-3.0', 'apache-2.0', 'no licence'],
-        name: 'license'
+        type: 'input',
+        message: 'Enter your programs test instructions',
+        name: 'test'
     },
     {
         type: 'input',
         message: 'Enter your GitHub username',
-        name: 'username'
+        name: 'github'
     },
     {
         type: 'input',
@@ -77,4 +95,4 @@ function init() {
 
 // Function call to initialize app
 init()
-.then(readMe => {console.log(readMe); writeToFile(readMe.title, generateMarkdown(readMe))})
+.then(readMe => {writeToFile(readMe.title, generateMarkdown(readMe))})
