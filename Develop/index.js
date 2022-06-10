@@ -73,6 +73,11 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'Enter your linked in username',
+        name: 'linkedin'
+    },
+    {
+        type: 'input',
         message: 'Enter your E-mail',
         name: 'email'
     },

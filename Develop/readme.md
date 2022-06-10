@@ -1,8 +1,8 @@
 
-  # <readme>
+  # <README>
   ![badge](https://img.shields.io/static/v1?label=License&message=agpl-3.0&color=blue)
   ## Description
-  this is for my project
+  readme generator, to cut down on project time, using inquirer
 
   ## Table of Contents
   - [Installation](#installation)
@@ -19,7 +19,7 @@
   node index.js
 
   ## Credits
-  me
+  Me
 
   ## License
   
@@ -30,15 +30,19 @@
   [agpl-3.0](https://choosealicense.com/licenses/agpl-3.0/)
 
   ## Features
-  fun space eat
-  
+  no extra features
+
   ## How to contribute
-  git
+  Click the link for my github at the bottom of my readme to contribute
 
   ## Tests
-  node test
+  no test instructions
 
   ## Contact
   [GitHub](https://github.com/DlonMusk)
-  Email: asdfjj
-  s
+
+  Email: Knight777@hotmail.ca
+
+  Linkedin: DylanKnight
+
+  Email is best
